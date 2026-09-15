@@ -227,4 +227,14 @@ function member_initial($name) {
     return strtoupper(function_exists('mb_substr') ? mb_substr($name, 0, 1, 'UTF-8') : substr($name, 0, 1));
 }
 
+function whatsapp_display_number($number) {
+    $number = preg_replace('/\D+/', '', (string)$number);
+
+    if (str_starts_with($number, '62')) {
+        return '0' . substr($number, 2);
+    }
+
+    return $number;
+}
+
 ?>
