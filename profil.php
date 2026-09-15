@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/functions.php';
+
+$conn = db_connect();
+
 $pageTitle = 'Tentang Kami';
 $storeInfo = get_store_info($conn);
 include __DIR__ . '/includes/header.php';
