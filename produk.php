@@ -1,0 +1,1 @@
+<?php header('Location: koleksi.php', true, 301); exit; ?>

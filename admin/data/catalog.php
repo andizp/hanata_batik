@@ -1,0 +1,6 @@
+<?php
+$q=mysqli_query($conn,"SELECT b.*,COALESCE(t.nm_type,'-') AS nm_type FROM barang b LEFT JOIN `type` t ON t.id_type=b.id_type ORDER BY b.id_brg DESC");
+?>
+<div class="page-head"><div><h1>Katalog Produk</h1><p>Ringkasan semua koleksi Hanata Batik.</p></div><a class="btn btn-primary" href="index.php?menu=barang&act=tambah"><i class="bi bi-plus-circle"></i> Tambah Produk</a></div>
+<div class="table-card"><div class="table-wrap"><table class="data-table"><thead><tr><th>No</th><th>Produk</th><th>Type</th><th>Harga</th><th>Stok</th><th>Status</th></tr></thead><tbody>
+<?php if($q&&mysqli_num_rows($q)>0):$n=1;while($r=mysqli_fetch_assoc($q)):?><tr class="data-row"><td><?php echo $n++;?></td><td><b><?php echo e($r['nm_brg']);?></b><span class="cell-sub"><?php echo e($r['ket']);?></span></td><td><span class="badge-type"><?php echo e($r['nm_type']);?></span></td><td><b><?php echo rupiah($r['hrg_jual']);?></b></td><td><?php echo (int)$r['stok'];?> pcs</td><td><span class="badge-status <?php echo (int)$r['status']===1?'active':'off';?>"><?php echo (int)$r['status']===1?'Aktif':'Nonaktif';?></span></td></tr><?php endwhile; else:?><tr><td colspan="6" class="empty-state">Belum ada produk.</td></tr><?php endif;?></tbody></table></div></div>
