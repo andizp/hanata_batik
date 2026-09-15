@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/functions.php';
+
+$conn = db_connect();
+
 $pageTitle = 'Kontak';
 $storeInfo = get_store_info($conn);
 $sent = ($_SERVER['REQUEST_METHOD'] === 'POST');
