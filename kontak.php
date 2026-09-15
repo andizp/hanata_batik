@@ -28,7 +28,7 @@ include __DIR__ . '/includes/header.php';
         <div class="detail-info">
             <h2>Informasi Toko</h2>
             <div class="info-list">
-                <div class="info-row"><span>WhatsApp</span><b><?php echo e($storeInfo['phone'] ?? ""); ?></b></div>
+                <div class="info-row"><span>WhatsApp</span><b><?php echo e($storeInfo['whatsapp'] ?? ""); ?></b></div>
                 <div class="info-row"><span>Email</span><b><?php echo e($storeInfo['email'] ?? ""); ?></b></div>
                 <div class="info-row"><span>Alamat</span><b><?php echo e($storeInfo['address'] ?? ""); ?></b></div><div class="info-row"><span>Jam Operasional</span><b><?php echo e($storeInfo['hours_weekday'] ?? ""); ?></b></div>
             </div>
